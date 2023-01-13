@@ -31,8 +31,8 @@ def create_recipe(user, **params):
         'title': 'Sample recipe title',
         'time_minutes': 22,
         'price': Decimal('5.25'),
-        'description': 'Sample recipe description',
-        'link': 'https://example.com/recipe.pdf'
+        'description': 'Sample description',
+        'link': 'http://example.com/recipe.pdf',
     }
     defaults.update(params)
     
@@ -52,7 +52,7 @@ class PublicRecipeAPITests(TestCase):
         
 
 
-class PrivateRecipeAPITests(TestCase):
+class PrivateRecipeApiTests(TestCase):
     """Test authenticated API requests."""
     
     def setUp(self):
@@ -90,7 +90,7 @@ class PrivateRecipeAPITests(TestCase):
         recipes = Recipe.objects.filter(user=self.user)
         serializer = RecipeSerializer(recipes, many=True)
         self.assertEqual(res.status_code, status.HTTP_200_OK)
-        self.assertEqual(res.status_code, serializer.data)
+        self.assertEqual(res.data, serializer.data)
         
     def test_get_recipe_detail(self):
         """Test get recipe detail"""
