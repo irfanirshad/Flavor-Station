@@ -1,4 +1,7 @@
-"""Sample tests
+# pylint: disable=import-error
+# noqa
+"""
+Sample tests 
 """
 from django.test import SimpleTestCase
 from app import calc
