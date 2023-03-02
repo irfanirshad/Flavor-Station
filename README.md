@@ -1,5 +1,5 @@
-## Chef Recipe App - TDD best practices | Docker | Django REST 
-This is a demo app where each chef can login as an individual user and upload their recipes with an optional tag. 
+## Flavor Station - TDD best practices | Docker | Django REST 
+This is a demo app where users can login as an individual user and upload their recipes with an optional tag. 
 
 This app was developed in a test-driven-development fashion .
 
